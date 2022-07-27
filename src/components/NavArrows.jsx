@@ -1,18 +1,22 @@
-export function NavArrows({currentPage,setCurrentPage}){
+export function NavArrows({currentPage,setCurrentPage, numberResults}){
 
     const prevClick=()=>{
-        if(currentPage>0) setCurrentPage(currentPage-1)
+        if(currentPage>1) setCurrentPage(currentPage-1)
     }
 
     const nextClick=()=>{
-        alert('hello')
+        //TODO stop once empty pages
+        if(currentPage< Math.ceil(numberResults/5)){
+            setCurrentPage(currentPage+1)
+        }
     }
 
     return (
         <>
             <section id="nav-arrows">
-                <button onClick={prevClick} id="nav-prev">{'<-'}</button>
-                <button onClick={nextClick} id="nav-next">{'->'}</button>
+                <button className="nav-arrows" id="nav-prev" onClick={prevClick}>{'<-'}</button>
+                <p>{'Page ' + currentPage + ' of ' + Math.ceil(numberResults/5)}</p>
+                <button className="nav-arrows" id="nav-next" onClick={nextClick}>{'->'}</button>
             </section>
         </>
     )
