@@ -1,1 +1,1 @@
-export {articlesSubset} from './utils/articlesSubset'
+export {patchVote} from './utils/patchVote'

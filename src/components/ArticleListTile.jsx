@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom';
 
 export function ArticleListTile ({article}) {
-
     return ( 
-            <a id='article-list-tile' href={`/articles/${article.article_id}`}>
+            <section id='article-list-tile'>
                 <h1 id='article-list-title'>{article.title}</h1>
                 <section className='article-details'>
                     <p>{"Created At: " + article.created_at.slice(0,10)}</p>
@@ -12,7 +11,7 @@ export function ArticleListTile ({article}) {
                     <p>{"Votes: " + article.votes}</p>
                     <p>{"Comments: " + article.comment_count}</p>
                 </section>
-            </a>
+            </section>
     )
 }
 
