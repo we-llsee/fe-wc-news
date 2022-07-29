@@ -3,7 +3,7 @@ import './App.css';
 import {useEffect, useState} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import {Header, NavBar, Articles, ArticlePage} from './componentList'
+import {Header, NavBar, Articles, ArticlePage, Topics, TopicPage} from './componentList'
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
         <Routes>
           <Route path='/articles' element={<Articles/>}/>
           <Route path='/articles/:article_id' element={<ArticlePage/>}/>
+          <Route path='/topics' element={<Topics/>}/>
+          <Route path='/topics/:slug' element={<TopicPage/>}/>
         </Routes>
       </BrowserRouter>
     </section>
