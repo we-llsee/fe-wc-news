@@ -52,3 +52,49 @@
     justify-content: space-between;
 }
 
+#topics{
+    display:flex;
+    flex-direction:column;
+}
+
+#topics-all-tiles{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:30vw;
+}
+
+#topics-all-tiles *{
+    text-decoration: none;
+}
+
+.topic-tile{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding:20px;
+    margin: 30px;
+}
+
+.funky-red{
+    background-color:tomato;
+    color:darkred;
+}
+
+.sea-blue{
+    background-color:lightskyblue;
+    color:darkblue;
+}
+
+.gorgeous-green{
+    background-color:green;
+    color:lightgreen;
+}
+
+.wavy-orange{
+    background-color: orange;
+    color:maroon;
+}
