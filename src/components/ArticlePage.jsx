@@ -17,19 +17,14 @@ export function ArticlePage() {
         }).then(body =>{
             setArticle({...body.article})
             setIsLoading(false);
-        });
-    },[article_id])
-
-    useEffect(()=>{
-        if(article.article_id=== "") return;
-
-        fetch(`https://wc-news.herokuapp.com/api/articles/${article_id}/comments`).then(res=>{
+        }).then(()=>{
+            return fetch(`https://wc-news.herokuapp.com/api/articles/${article_id}/comments`)
+        }).then(res=>{
             return res.json()
         }).then(body =>{
-            console.log(body.comments)
             setComments([...body.comments])
         });
-    },[article,article_id])
+    },[article_id])
 
     return (
         <>
