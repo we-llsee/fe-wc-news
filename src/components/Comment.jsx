@@ -8,7 +8,7 @@ export function Comment({comment}){
             <p>{comment.author}</p>
             <p>{'Votes: ' + comment.votes}</p>
             <p>{'Created: ' +comment.created_at}</p>
-            <Thumbs/>
+            <Thumbs patchURL={`https://wc-news.herokuapp.com/api/comments/${comment.comment_id}`}/>
         </section>
     )
 }

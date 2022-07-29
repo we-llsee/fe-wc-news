@@ -3,22 +3,22 @@ import {patchVote} from '../utilList'
 
 export function Thumbs({patchURL}){
 
-    const [thumbUpActive,setThumbUpActive] =useState(false);
-    const [thumbDownActive,setThumbDownActive] = useState(false);
+    const [thumbUpHasBeenClicked,setthumbUpHasBeenClicked] =useState(false);
+    const [thumbDownHasBeenClicked,setthumbDownHasBeenClicked] = useState(false);
 
     const thumbUpClick = function(){  
         //if thumb up is currently active then now deactivate and -1 vote
-        if(thumbUpActive===true){
+        if(thumbUpHasBeenClicked===true){
             return patchVote(-1,patchURL).then(()=>{
-                setThumbUpActive(false)
+                setthumbUpHasBeenClicked(false)
             })
         }
 
         //if it's inactive then....
         //...if thumb down is also inactive we can just activate thumb up and +1 vote
-        if(thumbUpActive===false && thumbDownActive===false){
+        if(thumbUpHasBeenClicked===false && thumbDownHasBeenClicked===false){
             return patchVote(1,patchURL).then(()=>{
-                setThumbUpActive(true)
+                setthumbUpHasBeenClicked(true)
             })
         }
 
@@ -26,40 +26,44 @@ export function Thumbs({patchURL}){
         //deactivate thumb down
         //activate thumb up
         //change the vote by +2
-        if(thumbUpActive===false && thumbDownActive===true){}
+        if(thumbUpHasBeenClicked===false && thumbDownHasBeenClicked===true){}
             return patchVote(2,patchURL).then(()=>{
-                setThumbUpActive(true)
-                setThumbDownActive(false)
+                setthumbUpHasBeenClicked(true)
+                setthumbDownHasBeenClicked(false)
             })
+
+
+            //useEffect(()=>{}, [thumbUpHasBeenClicked,thumbDownHasBeenClicked])
     }
 
+
     const thumbDownClick = function(){
-        if(thumbDownActive===true){
+        if(thumbDownHasBeenClicked===true){
             return patchVote(1,patchURL).then(()=>{
-                setThumbDownActive(false)
+                setthumbDownHasBeenClicked(false)
             });
         }
 
-        if(thumbDownActive===false && thumbUpActive===false){
+        if(thumbDownHasBeenClicked===false && thumbUpHasBeenClicked===false){
             return patchVote(-1,patchURL).then(()=>{
-                setThumbDownActive(true);
+                setthumbDownHasBeenClicked(true);
             })
         }
 
-        if(thumbDownActive===false && thumbUpActive===true){
+        if(thumbDownHasBeenClicked===false && thumbUpHasBeenClicked===true){
             return patchVote(-2,patchURL).then(()=>{
-                setThumbDownActive(true);
-                setThumbUpActive(false);
+                setthumbDownHasBeenClicked(true);
+                setthumbUpHasBeenClicked(false);
             })
         }
     }
     
     return (
         <section>
-            <p className={thumbUpActive ? 'active' : ''} onClick={()=>{thumbUpClick()}}>👍</p>
-            <p>{String(thumbUpActive)}</p>
-            <p className={thumbDownActive ? 'active' : ''} onClick={()=>{thumbDownClick()}}>👎</p>
-            <p>{String(thumbDownActive)}</p>
+            <p className={thumbUpHasBeenClicked ? 'active' : ''} onClick={()=>{thumbUpClick()}}>👍</p>
+            <p>{String(thumbUpHasBeenClicked)}</p>
+            <p className={thumbDownHasBeenClicked ? 'active' : ''} onClick={()=>{thumbDownClick()}}>👎</p>
+            <p>{String(thumbDownHasBeenClicked)}</p>
         </section>
         
     )
