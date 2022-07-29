@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import {SortBy, ArticleListTile, NavArrows} from '../componentList'
+import {Link} from 'react-router-dom'
 
 export function Articles(){
 
@@ -21,9 +22,13 @@ export function Articles(){
     return (
         <section id='articles'>
             <SortBy />
-            {articles.map(article=>{
-                return <ArticleListTile article={article}/>
-            })}
+            <section id='articles-all-tiles'>
+                 {articles.map(article=>{
+                    return  <Link to={`/articles/${article.article_id}`}>
+                                <ArticleListTile article={article}/>
+                            </Link>
+                 })}
+            </section>
             <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} numberResults={numberResults}/>
         </section>
     )

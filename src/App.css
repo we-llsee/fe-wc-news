@@ -34,6 +34,9 @@
     border: 1px solid gray;
     border-radius: 20px;
     margin-bottom: 30px;
+}
+
+#articles-all-tiles *{
     text-decoration: none;
     color:black;
 }
@@ -45,11 +48,34 @@
     justify-content:space-evenly;
 }
 
-
 #nav-arrows{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#article-full-card{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-items:center;
+    width:50vw;
+    border: 1px solid gray;
+    border-radius:20px;
+}
+
+.comment{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    width:35vw;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.active{
+    border: 3px solid yellow;
 }
 
 #topics{
