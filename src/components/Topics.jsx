@@ -6,17 +6,17 @@ export function Topics(){
 
     const [topics, setTopics] = useState([]);
     const [currentPage, setCurrentPage]= useState(1);
-    const [numberResults,setNumberResults] =useState(1);
+    const [lastPageNumber,setLastPageNumber] =useState(1);
 
     useEffect(()=>{
         fetch(`https://wc-news.herokuapp.com/api/topics?limit=10&p=${currentPage}`).then(res=>{
             return res.json();
         }).then(body=>{
-            setTopics(body.topics);
+            setTopics([...body.topics]);
             //hardcoded this for now
-            setNumberResults(3);
+            setLastPageNumber(1)
         })
-    },[])
+    },[currentPage])
 
     return (
         <section id='topics'>
@@ -30,7 +30,7 @@ export function Topics(){
                 })}
             </section>
            
-            <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} numberResults={numberResults}></NavArrows>
+            <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} lastPageNumber={lastPageNumber}></NavArrows>
         </section>
         
     )

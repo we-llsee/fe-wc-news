@@ -6,16 +6,14 @@ export function Articles(){
 
     const [currentPage,setCurrentPage] = useState(1);
     const [articles,setArticles] = useState([])
-    const [numberResults,setNumberResults] = useState(1)
+    const [lastPageNumber,setLastPageNumber] = useState(1)
 
     useEffect(()=>{
         fetch(`https://wc-news.herokuapp.com/api/articles?limit=5&p=${currentPage}`).then(res=>{
             return res.json()
         }).then(body =>{
-            //TODO will these benefit from being in thens?
-            console.log(body.articles)
             setArticles([...body.articles])
-            setNumberResults(body.total_count)
+            setLastPageNumber(Math.ceil(body.total_count/5))
         })
     },[currentPage])
 
@@ -29,7 +27,7 @@ export function Articles(){
                             </Link>
                  })}
             </section>
-            <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} numberResults={numberResults}/>
+            <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} lastPageNumber={lastPageNumber}/>
         </section>
     )
 }
