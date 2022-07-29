@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import {ArticleListTile,ArticleFullCard,Comment} from '../componentList'
+import {ArticleFullCard,Comment} from '../componentList'
 
 export function ArticlePage() {
 
@@ -18,7 +18,7 @@ export function ArticlePage() {
             setArticle({...body.article})
             setIsLoading(false);
         });
-    },[])
+    },[article_id])
 
     useEffect(()=>{
         if(article.article_id=== "") return;
@@ -29,7 +29,7 @@ export function ArticlePage() {
             console.log(body.comments)
             setComments([...body.comments])
         });
-    },[article])
+    },[article,article_id])
 
     return (
         <>

@@ -1,6 +1,5 @@
 import './App.css';
 
-import {useEffect, useState} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import {Header, NavBar, Articles, ArticlePage, Topics, TopicPage} from './componentList'

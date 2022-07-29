@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom';
-
 export function ArticleListTile ({article}) {
     return ( 
             <section id='article-list-tile'>

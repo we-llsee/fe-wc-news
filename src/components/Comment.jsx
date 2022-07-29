@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import {Thumbs} from '../componentList'
 
 export function Comment({comment}){
