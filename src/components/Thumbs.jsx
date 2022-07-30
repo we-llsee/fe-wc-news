@@ -1,69 +1,47 @@
 import {useState} from 'react'
-import {patchVote} from '../utilList'
+import {patchVote} from '../utils/utilList'
 
-export function Thumbs({patchURL}){
+export function Thumbs({patchURL,setNumberVotes}){
 
-    const [thumbUpHasBeenClicked,setthumbUpHasBeenClicked] =useState(false);
-    const [thumbDownHasBeenClicked,setthumbDownHasBeenClicked] = useState(false);
+    const [clickedThumb,setClickedThumb] = useState(null);
 
-    const thumbUpClick = function(){  
-        //if thumb up is currently active then now deactivate and -1 vote
-        if(thumbUpHasBeenClicked===true){
-            return patchVote(-1,patchURL).then(()=>{
-                setthumbUpHasBeenClicked(false)
+    const voteClick=(thumbDirection) =>{
+
+        if(thumbDirection===clickedThumb){
+            setNumberVotes((currVotes)=>currVotes + (-1*thumbDirection))
+
+            return patchVote(-1*thumbDirection,patchURL).then(()=>{
+                setClickedThumb(null)
+            }).catch(()=>{
+                setNumberVotes((currVotes)=>currVotes - (-1*thumbDirection))
             })
         }
 
-        //if it's inactive then....
-        //...if thumb down is also inactive we can just activate thumb up and +1 vote
-        if(thumbUpHasBeenClicked===false && thumbDownHasBeenClicked===false){
-            return patchVote(1,patchURL).then(()=>{
-                setthumbUpHasBeenClicked(true)
+        if(clickedThumb===null){
+            setNumberVotes((currVotes)=>currVotes + thumbDirection)
+
+            return patchVote(thumbDirection,patchURL).then(()=>{
+                setClickedThumb(thumbDirection)
+            }).catch(()=>{
+                setNumberVotes((currVotes)=>currVotes - thumbDirection)
             })
         }
 
-        //if thumb down is already active then:
-        //deactivate thumb down
-        //activate thumb up
-        //change the vote by +2
-        if(thumbUpHasBeenClicked===false && thumbDownHasBeenClicked===true){}
-            return patchVote(2,patchURL).then(()=>{
-                setthumbUpHasBeenClicked(true)
-                setthumbDownHasBeenClicked(false)
-            })
+        if(thumbDirection===clickedThumb * -1){
+            setNumberVotes((currVotes)=>currVotes + (2*thumbDirection))
 
-
-            //useEffect(()=>{}, [thumbUpHasBeenClicked,thumbDownHasBeenClicked])
-    }
-
-
-    const thumbDownClick = function(){
-        if(thumbDownHasBeenClicked===true){
-            return patchVote(1,patchURL).then(()=>{
-                setthumbDownHasBeenClicked(false)
-            });
-        }
-
-        if(thumbDownHasBeenClicked===false && thumbUpHasBeenClicked===false){
-            return patchVote(-1,patchURL).then(()=>{
-                setthumbDownHasBeenClicked(true);
-            })
-        }
-
-        if(thumbDownHasBeenClicked===false && thumbUpHasBeenClicked===true){
-            return patchVote(-2,patchURL).then(()=>{
-                setthumbDownHasBeenClicked(true);
-                setthumbUpHasBeenClicked(false);
+            return patchVote(2*thumbDirection,patchURL).then(()=>{
+                setClickedThumb(thumbDirection)
+            }).catch(()=>{
+                setNumberVotes((currVotes)=>currVotes - (2*thumbDirection))
             })
         }
     }
-    
+
     return (
         <section>
-            <p className={thumbUpHasBeenClicked ? 'active' : ''} onClick={()=>{thumbUpClick()}}>👍</p>
-            <p>{String(thumbUpHasBeenClicked)}</p>
-            <p className={thumbDownHasBeenClicked ? 'active' : ''} onClick={()=>{thumbDownClick()}}>👎</p>
-            <p>{String(thumbDownHasBeenClicked)}</p>
+            <p className={clickedThumb===1 ? 'active' : ''} onClick={()=>{voteClick(1)}}>👍</p>
+            <p className={clickedThumb===-1 ? 'active' : ''} onClick={()=>{voteClick(-1)}}>👎</p>
         </section>
         
     )

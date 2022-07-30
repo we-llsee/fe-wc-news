@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import {ArticleFullCard,Comment} from '../componentList'
+import {ArticleFullCard,Comment} from './componentList'
 
 export function ArticlePage() {
 

@@ -2,7 +2,7 @@ import './App.css';
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import {Header, NavBar, Articles, ArticlePage, Topics, TopicPage} from './componentList'
+import {Header, NavBar, Articles, ArticlePage, Topics, TopicPage} from './components/componentList'
 
 function App() {
 

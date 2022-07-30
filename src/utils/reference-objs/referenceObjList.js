@@ -1,0 +1,1 @@
+export {articleColumns} from './articleColumns.jsx'
