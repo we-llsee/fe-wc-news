@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { ArticleListTile, TopicTile, NavArrows, SortBy } from './componentList'
+import { articleColumns as articleColumnsReferenceObj } from '../utils/reference-objs/referenceObjList'
 
 export function TopicPage(){
 
@@ -35,7 +36,7 @@ export function TopicPage(){
     return (
         <section>
             <TopicTile topic={topic}/>
-            <SortBy sortBy={sortBy} setSortBy={setSortBy} sortOrder={sortOrder} setSortOrder={setSortOrder}/>
+            <SortBy sortBy={sortBy} setSortBy={setSortBy} sortOrder={sortOrder} setSortOrder={setSortOrder} sortColumns={articleColumnsReferenceObj}/>
             { isLoading ?   <p>Loading...</p> :
                             topicArticles.map(article=>{
                                 return (

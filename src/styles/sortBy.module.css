@@ -1,0 +1,9 @@
+.sortBy{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+
+.sortBy p{
+    margin:0;
+}

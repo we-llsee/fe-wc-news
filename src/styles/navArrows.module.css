@@ -1,0 +1,25 @@
+.navArrows{
+    display:flex;
+    flex-direction: row;
+}
+
+.one{
+    display:flex;
+    flex-direction: row;
+}
+
+.secA{
+   background-color: red;
+   width:50%;
+   height:5px;
+}
+
+.secB{
+    display:flex;
+    flex-direction:row-reverse;
+    flex-grow:1;
+}
+
+.navArrows p{
+    margin:0;
+}

@@ -1,0 +1,10 @@
+.navBar{
+    display:flex;
+    justify-content: center;
+}
+
+.navLink{
+    text-decoration:none;
+    padding-left:0.25rem;
+    padding-right:0.25rem;
+}

@@ -1,3 +1,5 @@
+import styles from '../styles/sortBy.module.css'
+
 export function SortBy({sortBy, setSortBy, sortOrder,setSortOrder,sortColumns={}}){
 
     //Considered adding a prop called sortColumns which would be - Object.keys(article[0]) - for example.
@@ -13,17 +15,17 @@ export function SortBy({sortBy, setSortBy, sortOrder,setSortOrder,sortColumns={}
     }
 
     return (
-            <section id='sort-by'>
-                <p onClick={(event)=>{changeSortOrder()}}>{sortOrder==='ASC' ? '📈':'📉'}</p>
-                <label htmlFor="sort-by">Sort By</label>
+            <div className={styles.sortBy}>
+                <label htmlFor="sort-dropdown">Sort By</label>
                 <select onChange={(event)=>setSortBy(event.target.value)} 
-                value={sortBy} name="sort-by" id="sort-by">
+                value={sortBy} name="sort-by" id="sort-dropdown">
 
                     {Object.keys(sortColumns).map(key =>{
                         return <option value={key}> {sortColumns[key]} </option>
                     })}
 
                 </select>
-            </section>
+                <p onClick={(event)=>{changeSortOrder()}}>{sortOrder==='ASC' ? '📈':'📉'}</p>
+            </div>
     )
 }

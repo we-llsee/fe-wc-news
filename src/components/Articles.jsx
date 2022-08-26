@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {SortBy, ArticleListTile, NavArrows} from './componentList'
 import {Link} from 'react-router-dom'
 import {articleColumns as articleColumnsReferenceObj} from '../utils/reference-objs/referenceObjList'
+import styles from '../styles/link.module.css'
 
 export function Articles(){
 
@@ -31,7 +32,7 @@ export function Articles(){
                 { isLoading ?  <p>Loading...</p> : 
                                 articles.map(article=>{
                                     return  (
-                                        <Link to={`/articles/${article.article_id}`}>
+                                        <Link className={styles.link} to={`/articles/${article.article_id}`}>
                                             <ArticleListTile article={article}/>
                                         </Link>
                                     )

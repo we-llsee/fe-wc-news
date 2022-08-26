@@ -1,0 +1,9 @@
+.header{
+    display:flex;
+    justify-content: center;
+}
+
+.header h1 {
+    color:green;
+    margin:0;
+}

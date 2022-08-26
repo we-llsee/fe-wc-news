@@ -6,7 +6,7 @@ export function ArticleFullCard({article}){
     const [numberVotes,setNumberVotes]=useState(article.votes)
 
     return (
-        <section id='article-full-card'>
+        <div id='article-full-card'>
             <section>
                 <p>{article.topic}</p>
                 <p>{article.title}</p>
@@ -20,6 +20,6 @@ export function ArticleFullCard({article}){
                 <p>Votes: {numberVotes}</p>
                 <Thumbs patchURL={`https://wc-news.herokuapp.com/api/articles/${article.article_id}`} setNumberVotes={setNumberVotes}/>
             </section>
-        </section>
+        </div>
     )
 }
