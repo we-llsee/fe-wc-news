@@ -1,0 +1,12 @@
+.articleListTile{
+    display:flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+.articleListTile h2{
+    margin:0;
+}
+
+.articleListTile p{
+    margin:0;
+}

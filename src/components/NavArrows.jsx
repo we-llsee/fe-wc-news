@@ -1,3 +1,5 @@
+import styles from '../styles/navArrows.module.css'
+
 export function NavArrows({currentPage,setCurrentPage, lastPageNumber}){
 
     const prevClick=()=>{
@@ -12,12 +14,11 @@ export function NavArrows({currentPage,setCurrentPage, lastPageNumber}){
     }
 
     return (
-        <>
-            <section id="nav-arrows">
-                <button className="nav-arrows" id="nav-prev" onClick={prevClick}>{'<-'}</button>
-                <p>{'Page ' + currentPage + ' of ' + lastPageNumber}</p>
-                <button className="nav-arrows" id="nav-next" onClick={nextClick}>{'->'}</button>
-            </section>
-        </>
+
+        <div className={styles.navArrows}>
+                    <button className={styles.navPrev} onClick={prevClick}>{'<-'}</button>
+                    <p>{'Page ' + currentPage + ' of ' + lastPageNumber}</p>
+                    <button className={styles.navNext} onClick={nextClick}>{'->'}</button>
+        </div> 
     )
 }

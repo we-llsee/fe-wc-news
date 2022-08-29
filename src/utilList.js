@@ -1,1 +1,0 @@
-export {patchVote} from './utils/patchVote'

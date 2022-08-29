@@ -1,0 +1,9 @@
+.navArrows{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navArrows p{
+    margin:0;
+}

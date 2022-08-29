@@ -1,0 +1,130 @@
+#app{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.nav-link{
+    padding-left:8px;
+    padding-right:8px;
+}
+
+#articles{
+    padding-top: 30px;
+    display:flex;
+    flex-direction: column;
+}
+
+#sort-by{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items:baseline;
+    margin-bottom:10px;
+}
+
+#sort-by label{
+    order:1;
+    padding-right:10px;
+}
+
+#article-list-tile{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items:center;
+    width: 60vw;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+#articles-all-tiles *{
+    text-decoration: none;
+    color:black;
+}
+
+.article-details{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content: space-between;
+    width:100%;
+    border: 1px solid black;
+}
+
+#nav-arrows{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#article-full-card{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-items:center;
+    width:80vw;
+    border: 1px solid gray;
+    border-radius:20px;
+}
+
+.comment{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width:60vw;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.active{
+    border: 3px solid yellow;
+}
+
+#topics{
+    display:flex;
+    flex-direction:column;
+}
+
+#topics-all-tiles{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:30vw;
+}
+
+#topics-all-tiles *{
+    text-decoration: none;
+}
+
+.topic-tile{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding:20px;
+    margin: 30px;
+}
+
+.funky-red{
+    background-color:tomato;
+    color:darkred;
+}
+
+.sea-blue{
+    background-color:lightskyblue;
+    color:darkblue;
+}
+
+.gorgeous-green{
+    background-color:green;
+    color:lightgreen;
+}
+
+.wavy-orange{
+    background-color: orange;
+    color:maroon;
+}
