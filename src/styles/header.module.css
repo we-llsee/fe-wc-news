@@ -1,9 +1,9 @@
 .header{
     display:flex;
     justify-content: center;
+    padding-top:1rem;
 }
 
 .header h1 {
-    color:green;
     margin:0;
 }
