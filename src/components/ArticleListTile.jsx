@@ -17,7 +17,7 @@ export function ArticleListTile ({article}) {
             // </div>
     <div className={styles.articleListTile}>
         <div className={styles.articleTitleBar}>
-            <img src='http://placekitten.com/100/100' width='100' height='100'></img>
+            <img src='http://placekitten.com/100/100' alt='Article thumbnail' width='100' height='100'></img>
             <p>{article.title}</p>
         </div>    
         <div className={styles.articleCoreDetails}>

@@ -10,7 +10,7 @@ export function Articles(){
     const [currentPage,setCurrentPage] = useState(1);
     const [articles,setArticles] = useState([])
     const [lastPageNumber,setLastPageNumber] = useState(1)
-    const [articlesPerPage,setArticlesPerPage] = useState(4);
+    const [articlesPerPage] = useState(4);
     const [isLoading,setIsLoading] = useState(true);
     const [sortBy,setSortBy] = useState('created_at');
     const [sortOrder,setSortOrder] = useState('DESC');
@@ -25,7 +25,7 @@ export function Articles(){
             setLastPageNumber(Math.ceil(body.total_count/articlesPerPage))
             setIsLoading(false);
         })
-    },[currentPage,sortBy,sortOrder])
+    },[articlesPerPage,currentPage,sortBy,sortOrder])
 
     return (
         <div className={articlesStyles.articles}>
