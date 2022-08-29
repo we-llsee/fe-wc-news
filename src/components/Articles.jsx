@@ -2,7 +2,8 @@ import {useEffect, useState} from 'react'
 import {SortBy, ArticleListTile, NavArrows} from './componentList'
 import {Link} from 'react-router-dom'
 import {articleColumns as articleColumnsReferenceObj} from '../utils/reference-objs/referenceObjList'
-import styles from '../styles/link.module.css'
+import linkStyles from '../styles/link.module.css'
+import articlesStyles from '../styles/articles.module.css'
 
 export function Articles(){
 
@@ -26,20 +27,20 @@ export function Articles(){
     },[currentPage,sortBy,sortOrder])
 
     return (
-        <section id='articles'>
+        <div className={articlesStyles.articles}>
             <SortBy sortBy={sortBy} setSortBy={setSortBy} sortOrder={sortOrder} setSortOrder={setSortOrder} sortColumns={articleColumnsReferenceObj}/>
-            <section id='articles-all-tiles'>
+            <div className={articlesStyles.articlesAllTiles}>
                 { isLoading ?  <p>Loading...</p> : 
                                 articles.map(article=>{
                                     return  (
-                                        <Link className={styles.link} to={`/articles/${article.article_id}`}>
+                                        <Link className={linkStyles.link} to={`/articles/${article.article_id}`}>
                                             <ArticleListTile article={article}/>
                                         </Link>
                                     )
                 })}
-            </section>
+            </div>
             <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} lastPageNumber={lastPageNumber}/>
-        </section>
+        </div>
     )
 }
 

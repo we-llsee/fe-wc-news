@@ -14,18 +14,11 @@ export function NavArrows({currentPage,setCurrentPage, lastPageNumber}){
     }
 
     return (
-            // <div className={styles.navArrows}>
-            //         <button className={styles.navPrev} onClick={prevClick}>{'<-'}</button>
-            //         <p>{'Page ' + currentPage + ' of ' + lastPageNumber}</p>
-            //         <button className={styles.navNext} onClick={nextClick}>{'->'}</button>
-            // </div>
-            <div className={styles.one}>
-                <section className={styles.secA}>
+
+        <div className={styles.navArrows}>
                     <button className={styles.navPrev} onClick={prevClick}>{'<-'}</button>
-                </section>
-                <section className={styles.secB}>
+                    <p>{'Page ' + currentPage + ' of ' + lastPageNumber}</p>
                     <button className={styles.navNext} onClick={nextClick}>{'->'}</button>
-                </section>
-            </div>
+        </div> 
     )
 }

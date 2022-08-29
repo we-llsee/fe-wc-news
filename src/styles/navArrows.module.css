@@ -1,23 +1,7 @@
 .navArrows{
     display:flex;
     flex-direction: row;
-}
-
-.one{
-    display:flex;
-    flex-direction: row;
-}
-
-.secA{
-   background-color: red;
-   width:50%;
-   height:5px;
-}
-
-.secB{
-    display:flex;
-    flex-direction:row-reverse;
-    flex-grow:1;
+    justify-content: center;
 }
 
 .navArrows p{

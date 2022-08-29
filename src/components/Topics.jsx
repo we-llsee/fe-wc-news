@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { NavArrows, TopicTile } from "./componentList"
 import { Link } from 'react-router-dom'
+import linkStyles from '../styles/link.module.css'
+import topicStyles from '../styles/topics.module.css'
 
 export function Topics(){
 
@@ -22,20 +24,18 @@ export function Topics(){
     },[currentPage])
 
     return (
-        <section id='topics'>
-            <section id='topics-all-tiles'>
-                { isLoading ?   <p>Loading...</p> : 
-                                topics.map(topic=>{
-                                    return  (
-                                        <Link to={`/topics/${topic.slug}`}>
-                                            <TopicTile topic={topic}/>
-                                        </Link>
-                                    )
+        <div className={topicStyles.topic}>
+            <div id='topics-all-tiles'>
+                { isLoading ? <p>Loading...</p> : topics.map(topic=>{
+                    return  <Link className={linkStyles.link} to={`/topics/${topic.slug}`}>
+                                <TopicTile topic={topic}/>
+                            </Link>                       
                 })}
-            </section>
-           
+            </div>
+                
+            {/*TODO  why is this NavArrows picking up style without it specified in a className */}
             <NavArrows currentPage={currentPage} setCurrentPage={setCurrentPage} lastPageNumber={lastPageNumber}></NavArrows>
-        </section>
+        </div>
         
     )
 }
