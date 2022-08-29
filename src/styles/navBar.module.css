@@ -1,10 +1,13 @@
 .navBar{
     display:flex;
     justify-content: center;
+    padding-top:1rem;
+    padding-bottom:0.5rem;
 }
 
 .navLink{
     text-decoration:none;
-    padding-left:0.25rem;
-    padding-right:0.25rem;
+    font-size: 24px;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
 }

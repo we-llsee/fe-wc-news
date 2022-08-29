@@ -60,11 +60,9 @@
     padding-right:2.5%;
 }
 
-.articleTitleBar h2{
-    margin:0px;
+.articleTitleBar p{
     font-size:22px;
-    height:80%;
-    vertical-align: middle;
+    height:auto;
     padding-left:2.5%;
     display: -webkit-box;
     -webkit-box-orient: vertical;

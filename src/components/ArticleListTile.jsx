@@ -18,7 +18,7 @@ export function ArticleListTile ({article}) {
     <div className={styles.articleListTile}>
         <div className={styles.articleTitleBar}>
             <img src='http://placekitten.com/100/100' width='100' height='100'></img>
-            <h2>{article.title}</h2>
+            <p>{article.title}</p>
         </div>    
         <div className={styles.articleCoreDetails}>
             <p>{"Created: " + article.created_at.slice(0,10)}</p>

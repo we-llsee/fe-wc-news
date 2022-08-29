@@ -2,6 +2,8 @@
     display:flex;
     justify-content: flex-end;
     align-items:center;
+    padding-top:0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .sortBy p{
