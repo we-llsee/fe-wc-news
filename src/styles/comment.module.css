@@ -1,0 +1,28 @@
+.commentLight, .commentDark {
+    display:flex;
+    flex-direction:column;
+    margin-top:1rem;
+    margin-bottom:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    border-radius: 20px;
+}
+
+.commentLight p,.commentDark p {
+    margin:0px;
+    /* padding-top:0.25rem;
+    padding-bottom:0.25rem; */
+}
+
+.commentLight {
+    border: 1px black solid;
+}
+
+.commentDark {
+    background-color:rgb(225,225,225)
+}
+
+.dateTime{
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+}

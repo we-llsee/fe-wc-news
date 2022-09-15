@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import {Thumbs} from './componentList'
+import { ItemDetails } from './componentList'
+import styles from '../styles/comment.module.css'
+import formatDateTime from '../utils/formatDateTime';
 
-export function Comment({comment}){
+export function Comment({comment,styleName}){
 
     const [numberVotes,setNumberVotes] = useState(comment.votes)
 
     return (
-        <section className='comment'>
+        <div className={ styleName==='light' ? styles.commentLight : styles.commentDark}>
+            <p className={styles.dateTime}>{formatDateTime(comment.created_at)}</p>
             <p>{comment.body}</p>
-            <p>{comment.author}</p>
-            <p>{'Votes: ' + numberVotes}</p>
-            <p>{'Created: ' +comment.created_at}</p>
-            <Thumbs patchURL={`https://wc-news.herokuapp.com/api/comments/${comment.comment_id}`} setNumberVotes={setNumberVotes}/>
-        </section>
+            <ItemDetails patchURL={`https://wc-news.herokuapp.com/api/comments/${comment.comment_id}`} author={comment.author} numberVotes={numberVotes} setNumberVotes={setNumberVotes}/>
+       </div>
     )
 }

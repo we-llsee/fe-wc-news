@@ -1,0 +1,15 @@
+.articleFullCard{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.articleFullCard * {
+    margin:0px;
+}
+
+img{
+    padding-top:0.75rem;
+    padding-bottom:0.75rem;
+}
