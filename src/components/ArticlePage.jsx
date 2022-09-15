@@ -33,11 +33,14 @@ export function ArticlePage() {
             { isLoading ? <p>Loading...</p> : <ArticleFullCard article={article}/>}
             {/*TODO add key to each comment element for when comments are deleted etc*/}
             { commentsVisible ?
-                comments.map(comment=>{
-                    return <Comment comment={comment}/>
+                comments.map((comment,index)=>{
+                    if(index%2===0){
+                        return <Comment styleName={'light'} comment={comment}/>
+                    }
+                    return <Comment styleName={'dark'} comment={comment}/>
                 })
                 :
-                <p className={styles.showComments} onClick={()=>{setCommentsVisible(!commentsVisible)}}>View Comments</p>}
+                <p className={styles.showComments} onClick={()=>{setCommentsVisible(!commentsVisible)}}>Show Comments</p>}
         </div>
         )
 }

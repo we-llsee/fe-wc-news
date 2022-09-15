@@ -1,16 +1,28 @@
-.comment{
+.commentLight, .commentDark {
     display:flex;
     flex-direction:column;
     margin-top:1rem;
     margin-bottom:1rem;
-    border: 1px black solid;
+    padding-left:1rem;
+    padding-right:1rem;
     border-radius: 20px;
 }
 
-.comment p{
-    width:fit-content;
+.commentLight p,.commentDark p {
+    margin:0px;
+    /* padding-top:0.25rem;
+    padding-bottom:0.25rem; */
 }
 
-.thumbs{
-    display:flex;
+.commentLight {
+    border: 1px black solid;
+}
+
+.commentDark {
+    background-color:rgb(225,225,225)
+}
+
+.dateTime{
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
 }

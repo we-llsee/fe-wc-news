@@ -9,27 +9,7 @@
     margin:0px;
 }
 
-.articleDetails{
-    display:flex;
-    width:100%;
-    justify-content: space-between;
-    align-items: center;
-    padding-top:0.5rem;
-    padding-bottom:0.5rem;
-}
-
 img{
     padding-top:0.75rem;
     padding-bottom:0.75rem;
 }
-
-.articleThumbs{
-    display:flex;
-    flex-direction: row;
-}
-
-.articleThumbs p{
-    padding-left:0.5rem;
-    padding-right:0.5rem;
-}
-

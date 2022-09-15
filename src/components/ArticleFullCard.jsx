@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Thumbs} from './componentList'
+import { ItemDetails } from './componentList'
 import styles from '../styles/articleFullCard.module.css'
 
 export function ArticleFullCard({article}){
@@ -17,14 +17,7 @@ export function ArticleFullCard({article}){
 
     
             <p className={styles.articleMainText}>{article.body}</p>
-            <div className={styles.articleDetails}> 
-                <p>By {article.author}</p>
-                {/* <p>{article.topic}</p> */}
-                <p>Votes: {numberVotes}</p>
-                <div className={styles.articleThumbs}>
-                     <Thumbs patchURL={`https://wc-news.herokuapp.com/api/articles/${article.article_id}`} setNumberVotes={setNumberVotes}/>
-                </div>
-            </div>
+            <ItemDetails author={article.author} numberVotes={numberVotes} patchURL={`https://wc-news.herokuapp.com/api/articles/${article.article_id}`} setNumberVotes={setNumberVotes} />
         </div>
     )
 }
