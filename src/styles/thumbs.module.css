@@ -1,0 +1,9 @@
+.active, .inactive{
+    width:'fit-content';
+    border-radius: 10px;
+}
+
+.active{
+    border: 2px rgb(246, 191, 10) solid;
+    background-color:blanchedalmond;
+}

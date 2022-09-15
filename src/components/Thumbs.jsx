@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {patchVote} from '../utils/utilList'
+import styles from '../styles/thumbs.module.css'
 
 export function Thumbs({patchURL,setNumberVotes}){
 
@@ -39,10 +40,11 @@ export function Thumbs({patchURL,setNumberVotes}){
     }
 
     return (
-        <section>
-            <p className={clickedThumb===1 ? 'active' : ''} onClick={()=>{voteClick(1)}}>👍</p>
-            <p className={clickedThumb===-1 ? 'active' : ''} onClick={()=>{voteClick(-1)}}>👎</p>
-        </section>
+        <>  
+            <p className={clickedThumb===1 ? styles.active : styles.inactive} onClick={()=>{voteClick(1)}}>👍</p>
+            <p className={clickedThumb===-1 ? styles.active : styles.inactive} onClick={()=>{voteClick(-1)}}>👎</p>
+        </>
+          
         
     )
 }

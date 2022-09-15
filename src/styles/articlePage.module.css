@@ -1,0 +1,11 @@
+.articlePage {
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+    padding-top:1rem;
+}
+
+.showComments {
+    text-decoration: underline;
+    color:blue;
+    text-align: center;
+}
